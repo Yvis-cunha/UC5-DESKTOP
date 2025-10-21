@@ -4,59 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      body {
+          background-color: rgb(240, 237, 245);
+      }
+      p {
+      font-family: verdana;
+      font-size: 40px;
+      color: rgb(112, 35, 136);
+      font-weight: bold;
+      }
+      button{
+        color:rgb(0, 0, 0);
+        border-radius: 50px;
+      }
+    </style>
 </head>
-<style>
-  .styled{
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-  }
-  .styled {
-  border: 0;
-  line-height: 2.5;
-  padding: 0 20px;
-  font-size: 1rem;
-  text-align: center;
-  color: #fff;
-  text-shadow: 1px 1px 1px #000;
-  border-radius: 10px;
-  background-color: rgb(220 0 0 / 100%);
-  background-image: linear-gradient(
-    to top left,
-    rgb(0 0 0 / 20%),
-    rgb(0 0 0 / 20%) 30%,
-    rgb(0 0 0 / 0%)
-  );
-  box-shadow:
-    inset 2px 2px 3px rgb(255 255 255 / 60%),
-    inset -2px -2px 3px rgb(0 0 0 / 60%);
-}
 
-.styled:hover {
-  background-color: rgb(255 0 0 / 100%);
-}
-
-.styled:active {
-  box-shadow:
-    inset -2px -2px 3px rgb(255 255 255 / 60%),
-    inset 2px 2px 3px rgb(0 0 0 / 60%);
-}
-
-</style>
 <body>
-    <a href="main.js">Acesse a DevMedia</a>
-    <h1>Hello world!</h1>
-    <input class="styled" type="button" value="virus aqui" />
+   <h1>Hello world!</h1>
 
-    <div>
-    <input type="checkbox" id="horns" name="horns" />
-    <label for="horns">Horns</label>
-    </div>
-    <input type="date" value="2017-06-01" />
-    <p style="color: blue">Parágrafo com fonte azul.</p>
+   <label for="nome">Nome:</label> <!--é o nome dado ao antes da caixa-->
+   <input type="text" id="nome" placeholder="Digite seu nome"> <!--type define o tipo de conteudo que vem na caixa, e placehoude é o nome que vem denteo da caixa-->
+   <button id= "botao" onclick="peganome()"> Enviar </button> <!--botão-->
     
+   <!--Atividade-->
+  <br><br><br>
+  <label for="numero">Numero:</label>
+  <input type="text" id="numero" placeholder="Digte um numero aqui"/>
+  <button id="botao" onclick="verificarnumero()">Verificar</button>
+   
 
-    
+   <p id="texto1"></p>
+   <p id="vernumero"></p>
+
+   <script>
+      function peganome(){
+        let conteudo = document.getElementById('nome').value
+        alert(`Olá ${conteudo}`)
+        document.getElementById('nome').value = '' //limpa o campo
+        document.getElementById('texto1').innerHTML = conteudo
+      }
+
+      function verificarnumero(){
+        let conteudo = document.getElementById('numero').value
+        if(conteudo > 0){
+            document.getElementById('vernumero').innerHTML = 'Positivo'
+            document.getElementById('numero').value = ''
+        }else{
+          document.getElementById('vernumero').innerHTML = 'Negativo'
+          document.getElementById('numero').value = ''
+        }
+      }
+   </script>
+
 </body>
 </html>

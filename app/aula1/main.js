@@ -1,25 +1,24 @@
 import {app, BrowserWindow}from 'electron'
 
-const criarjanela = () =>{
+function criarjanela(){
     const janela = new BrowserWindow({
         width: 800,
         height: 600,
-        
-        
-        
+        title: "Aplicação Desktop"
+               
     })
-    janela.loadFile('index.html')
-    janela.setMenu(null); // remover o menu dentro da interface
-    
+    janela.loadFile('index.html')    
 }
-
-
-console.log("executando electron")
-
-
-app.whenReady().then(()=>{
+app.whenReady()
+    .then(()=>{
     criarjanela()
-})
+    console.log("executando electron")
+    })
+    .catch((error)=>{
+    console.log(error)
+    })
+
+
 
 
 
