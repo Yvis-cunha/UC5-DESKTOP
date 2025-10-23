@@ -16,20 +16,18 @@
     <p id="mostrarnota"></p>
     <script>
         function kelvin(){
-            let valor =  parseFloat(document.getElementById('valor').value)
+            let valor =  Number(document.getElementById('valor').value)
             let result = valor + 273.15
             document.getElementById('mostrarnota').innerHTML = `kelvin: ${result}`
-
         }
         function fahren(){
-            let valor =  document.getElementById('valor').value
+            let valor =  Number(document.getElementById('valor').value)
             let result = (valor * 1.8)+32
             document.getElementById('mostrarnota').innerHTML = `kelvin: ${result}`
         }
-
         function limpa(){
-            document.getElementById('mostrarnota').value = ''
             document.getElementById('valor').value = ''
+            document.getElementById('mostrarnota').innerHTML = ''
 
         }
 
