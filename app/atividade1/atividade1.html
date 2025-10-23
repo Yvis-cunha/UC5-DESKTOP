@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+          background: linear-gradient(100deg, #00e1ff, #00b3b3);         
+      }
+      p {
+        text-align: center;
+      font-family: verdana;
+      font-size: 40px;
+      color: rgb(112, 35, 136);
+      font-weight: bold;
+      }
+      button{        
+        color:rgb(0, 0, 0);
+        border-radius: 10px;
+        width: 80px;
+        padding: 10px;
+      }
+      #numero{
+        border-radius: 10px;
+        width: 200px;
+        padding: 10px;
+
+      }
+      h1{
+        text-align: center;
+      }
+      #botaoativi2:hover{
+        background-color: aquamarine;
+        transform: scale(1.05);
+      }
+      #botaoativi2{
+        position:absolute;
+        width: 100px;
+        left: 370px;
+        top: 300px;
+      }
+    </style>
+</head>
+
+<body>
+   <h1>VERIFICADOR DE NÚMERO</h1>   
+   <br><!--Atividade-->
+  <label for="numero">Numero:</label>
+  <input type="text" id="numero" placeholder="Digte um numero aqui"/>
+  <button id="botao" onclick="verificarnumero()">Verificar</button>
+  <button id="botaolimpa" onclick="limpacampo()">limpa</button>
+  <a href="atividade2.html"> <button id = "botaoativi2">Atividade 2</button></a>
+      
+   <p id="vernumero"></p>
+   <p id="versinal"></p>
+
+   <script>
+
+      function limpacampo(){
+          document.getElementById('numero').value = ''
+          document.getElementById('vernumero').innerHTML = ''
+          document.getElementById('versinal').innerHTML = ''
+        }
+      function verificarnumero(){
+        let conteudo = document.getElementById('numero').value
+        if(conteudo == ''){
+          alert('Você precisar digitar um valor!') 
+         
+        }else if(conteudo > 0 && conteudo % 2 == 0){
+          document.getElementById('vernumero').innerHTML = 'Positivo'
+          document.getElementById('versinal').innerHTML = 'Par'
+        }else if(conteudo > 0 && conteudo % 2 != 0){
+          document.getElementById('vernumero').innerHTML = 'Positivo'
+          document.getElementById('versinal').innerHTML = 'ímpa'
+        }else if(conteudo < 0 && conteudo % 2 == 0){
+          document.getElementById('vernumero').innerHTML = 'Negativo'
+          document.getElementById('versinal').innerHTML = 'Par'          
+        }else if(conteudo < 0 && conteudo % 2 != 0){
+          document.getElementById('vernumero').innerHTML = 'Negativo'
+          document.getElementById('versinal').innerHTML = 'ímpa'          
+        }
+      }
+   </script>
+
+</body>
+</html>  

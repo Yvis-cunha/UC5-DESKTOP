@@ -2,12 +2,13 @@ import {app, BrowserWindow}from 'electron'
 
 function criarjanela(){
     const janela = new BrowserWindow({
-        width: 800,
-        height: 600,
-        title: "Aplicação Desktop"
+        width: 500,
+        height: 450,
+        title: "Aplicação Desktop",
+        resizable: false,
                
     })
-    janela.loadFile('index.html')    
+    janela.loadFile('atividade1.html')    
 }
 app.whenReady()
     .then(()=>{

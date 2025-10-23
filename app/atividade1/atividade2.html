@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+</head>
+<body>
+    <h1>Calculadora de Notas</h1>
+    <label for="numero">Nota atividade:</label>
+    <input type="text" id="nota1" placeholder="Digte um numero aqui"/><br>
+    <br><label for="numero">Nota Prova:</label>
+    <input type="text" id="nota2" placeholder="Digte um numero aqui"/><br>
+    <button id="botao" onclick="verificarnota()">Calcular</button><br><br>
+    <a href="atividade3.html"><button>Atividade 3</button></a>
+
+
+    <p id="mostrarnota"></p>
+    <script>
+        function verificarnota(){
+            let nota1 = document.getElementById('nota1').value
+            let nota2 = document.getElementById('nota2').value
+            let result = (nota1 * 0.4) + (nota2 *0.6)
+            if(nota1 == '' && nota2 == ''){
+                alert('Você precisar inserir a nota no campo!')
+            }else{
+                document.getElementById('mostrarnota').innerHTML = `Sua nota é: ${(result).toFixed(2)}`
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
