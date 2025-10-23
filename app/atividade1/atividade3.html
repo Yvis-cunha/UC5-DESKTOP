@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+9<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,18 +8,31 @@
 <body>
     <h1>Calculadora de Notas</h1>
     <label for="numero">ºC:</label>
-    <input type="text" id="valor" placeholder="Digte um numero aqui"/><br><br>
-    <button id="botao" onclick="kelvin()">Kelvin</button><br><br>
-    <button id="botao" onclick="fahren()">Fahrenheit</button>
+    <input type="number" id="valor" placeholder="Digte um numero aqui"/><br><br>
+    <button id="botaok" onclick="kelvin()">Kelvin</button><br><br>
+    <button id="botaof" onclick="fahren()">Fahrenheit</button>
+    <button id="botaol" onclick="limpa()">limpar</button>
 
     <p id="mostrarnota"></p>
     <script>
         function kelvin(){
-            let valor =  document.getElementById('valor').value
-            let result = 
-            document.getElementById('vernumero').innerHTML = `kelvin: ${}`
+            let valor =  parseFloat(document.getElementById('valor').value)
+            let result = valor + 273.15
+            document.getElementById('mostrarnota').innerHTML = `kelvin: ${result}`
 
         }
+        function fahren(){
+            let valor =  document.getElementById('valor').value
+            let result = (valor * 1.8)+32
+            document.getElementById('mostrarnota').innerHTML = `kelvin: ${result}`
+        }
+
+        function limpa(){
+            document.getElementById('mostrarnota').value = ''
+            document.getElementById('valor').value = ''
+
+        }
+
     </script>
     
 </body>
