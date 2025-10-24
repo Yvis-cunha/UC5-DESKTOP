@@ -6,17 +6,25 @@ function criarjanela(){
         height: 450,
         title: "Aplicação Desktop",
         resizable: false,
+        fullscreen: false,
+        icon: 'caminho',
+        webPreferences:{
+            nodeIntegration: false,
+            contextIsolation: true,
+            devTools: false // para adicionar depuração do sistema.
+        }
                
     })
-    janela.loadFile('atividade1.html')    
+    janela.loadFile('atividade1.html')
+    janela.removeMenu()    
 }
 app.whenReady()
     .then(()=>{
-    criarjanela()
-    console.log("executando electron")
+        criarjanela()
+        console.log("executando electron")
     })
     .catch((error)=>{
-    console.log(error)
+        console.log(error)
     })
 
 
