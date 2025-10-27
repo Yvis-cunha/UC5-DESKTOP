@@ -7,15 +7,39 @@
 </head>
 <body>
 
-    <p>Converso de Moedas</p>
-    <label for="numero" id="textocaixa">1º Bimestre</label>
-    <input type="number" id="valor" placeholder="Digte o valor!"/>
+    <p>Calculadora de Notas</p>
+    <label for="nota1" id="n1">1º Bimestre:</label>
+    <input type="text" id="nota1" placeholder="Digte sua Nota"/>
     
-    <br><label for="numero" id="textocaixa">2º Bimestre</label>
-    <input type="number" id="valor" placeholder="Digte o valor!"/>
+    <br><label for="nota2" id="n2">2º Bimestre:</label>
+    <input type="text" id="nota2" placeholder="Digte sua Nota"/>
 
-    <br><label for="numero" id="textocaixa">3º Bimestre</label>
-    <input type="number" id="valor" placeholder="Digte o valor!"/>    
+    <br><label for="nota3" id="n3">3º Bimestre:</label>
+    <input type="text" id="nota3" placeholder="Digte sua Nota"/>
+
+    <br><label for="nota4" id="n4">4º Bimestre:</label>
+    <input type="text" id="nota4" placeholder="Digte sua Nota"/>
+
+    <br><button id="botaocalcular" onclick="calcularnota()">Calcular</button>
+
+    <p id="nota"></p>
     
+    <script>
+        function calcularnota(){
+            let nota1 = Number (document.getElementById('nota1').value)
+            let nota2 = Number (document.getElementById('nota2').value)
+            let nota3 = Number (document.getElementById('nota3').value)
+            let nota4 = Number (document.getElementById('nota4').value)
+            let result = (nota1 + nota2 + nota3 + nota4)/4
+
+            if(result >= 7){
+                alert(`Aprovado! sua nota é: ${result}`)
+            }else if(result >4 && result < 6.9){
+                alert(`Recuperação sua nota é: ${result}`)
+            }else if(result < 4){
+                alert(`Reprovado! sua nota é: ${result}`)
+            }
+        }
+    </script>
 </body>
 </html>
