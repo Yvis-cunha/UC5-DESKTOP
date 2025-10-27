@@ -15,7 +15,7 @@ function criarjanela(){
         }
                
     })
-    janela.loadFile('menu.html')
+    janela.loadFile('converso.html')
     janela.removeMenu()    
 }
 app.whenReady()

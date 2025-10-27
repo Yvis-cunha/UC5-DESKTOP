@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converso de moedas</title>
+</head>
+<body>
+
+    <p>Converso de Moedas</p>
+    <label for="numero" id="textocaixa">Digite o valor em R$:</label>
+    <input type="number" id="valor" placeholder="Digte o valor!"/>
+    <div id="menu">    
+        <br><br><button id="botao" onclick="calculardola()">Dólar</button>
+        <button id="botao" onclick="calculareuro()">Euro</button>
+        <button id="botao" onclick="calcularpeso()">Peso</button>
+        <button id="botao" onclick="calcularlibra()">Libra</button>
+        <button id="botao" onclick="calcularfranco()">Franco</button> 
+    </div>
+    
+    <br><img src="img/moeada2.png" alt="Descrição da imagem" width="230" height="230">
+    <p id="valorconvertido"></p>
+    <style>
+        #textocaixa{
+            font-family: Arial, Helvetica, sans-serif;
+            color: azure;
+        }
+        p{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: azure;
+        }
+        #valorconvertido{
+            position: absolute;
+            left: 250px;
+            top: 250px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(236, 240, 15);
+        }
+        #menu{
+            text-align: center;
+            
+        }
+        #botao:hover{
+            background-color: rgb(226, 214, 46);
+            transform: scale(1.05);
+        }
+        #botao{
+            border-radius: 5px;
+            width: 60px;
+            padding: 5px;
+
+        }
+        body{
+            background: linear-gradient(90deg, #00e1ff, #281133);
+        }
+        #valor{
+            border-radius: 10px;
+            width: 200px;
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+        function calculardola(){
+            let valor =  Number(document.getElementById('valor').value) / 5.39
+            document.getElementById('valorconvertido').innerHTML = `Valor em Dólar: $${(valor).toFixed(2)}`
+        }
+        function calculareuro(){
+            let valor = Number(document.getElementById('valor').value) / 6.353
+            document.getElementById('valorconvertido').innerHTML = `Valor em Euro: €${(valor).toFixed(2)}`
+        }
+        function calcularpeso(){
+            let valor = Number(document.getElementById('valor').value) / 0.0042
+            document.getElementById('valorconvertido').innerHTML = `Valor em Peso: $${(valor).toFixed(2)}`
+        }
+        function calcularlibra(){
+            let valor = Number(document.getElementById('valor').value) / 7.326
+            document.getElementById('valorconvertido').innerHTML = `Valor em Libra: £${(valor).toFixed(2)}`
+        }
+        function calcularfranco(){
+            let valor = Number(document.getElementById('valor').value) / 6.753
+            document.getElementById('valorconvertido').innerHTML = `Valor em Franco: £${(valor).toFixed(2)}`
+        }
+    </script>
+</body>
+</html>
