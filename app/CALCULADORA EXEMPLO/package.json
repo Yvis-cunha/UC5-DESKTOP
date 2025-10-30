@@ -1,5 +1,5 @@
 {
-  "name": "atividade4",
+  "name": "aula2",
   "version": "1.0.0",
   "main": "main.js",
   "type": "module",
@@ -8,11 +8,10 @@
     "start": "electron main.js"
   },
   "keywords": [],
-  "author": "Yviscunha",
+  "author": "Aparecida",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "electron": "^39.0.0"
-  },
-  "devDependencies": {},
-  "description": ""
+  }
 }
