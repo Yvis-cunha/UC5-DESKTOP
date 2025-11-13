@@ -11,8 +11,8 @@
   "author": "Yviscunha",
   "license": "ISC",
   "dependencies": {
-    "electron": "^39.0.0"
+    "electron": "^39.0.0",
+    "electronmon": "^2.0.4"
   },
-  "devDependencies": {},
   "description": ""
 }
