@@ -1,4 +1,4 @@
-import {app, BrowserWindow, Menu}from 'electron'
+import {app, BrowserWindow, Menu, Dialog, dialog}from 'electron'
 
 function criarjanela(){
     const janela = new BrowserWindow({
@@ -17,6 +17,13 @@ function criarjanela(){
     })
     janela.loadFile('atividade1.html')
     janela.removeMenu()
+    janela.webContents.on('did-frame-finish-load' , async()=>{
+        await dialog.showMessageBox({
+            type: 'info',
+            title:'Bem-vindo',
+            message: 'Foi iniciada'
+        })
+    })
     Menu.setApplicationMenu(Menu.buildFromTemplate(template)) // menu    
 }
 app.whenReady()
@@ -28,7 +35,7 @@ app.whenReady()
         console.log(error)
     })
     
-    
+    //criar menu na parte superior
  const template = [
     {label: "Aplicação", 
         submenu:[
